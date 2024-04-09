@@ -1,0 +1,43 @@
+---
+import ExperienceItem from "./ExperienceItem.astro";
+const EXPERIENCES = [
+  {
+    title: "Lead Fullstack Developer",
+    company: "Asistencia y Gestión Logística (AGL)",
+    location: "República Dominicana",
+    date: "Actualidad",
+    description: `Lidero el equipo de desarrollo en la creación y mantenimiento de las apps.
+     Creamos nuestra propia Plataforma de Rastreo Vehicular Automático (AVL) desde cero, 
+     logrando que sea 20 veces más óptima que la versión anterior`,
+  },
+  {
+    title: "Full Stack Developer",
+    company: "Inder, SRL",
+    date: "Enero 2019 - Diciembre 2021",
+    location: "República Dominicana",
+    description: `Desarrollamos una plataforma de gestión en la declaración de impuestos 
+    que permite a los usuarios presentar sus impuestos de forma rápida y eficiente. 
+    Redujimos en un 90% el personal especializado, aumentando el número de clientes`,
+  },
+  {
+    title: "Coordinador de Banco de pruebas",
+    company: "Hunter del Caribe",
+    location: "Republica Dominicana",
+    date: "Octubre 2016 - Septiembre 2019",
+    description: `Trabajamos con la programación y gestión de equipos GPS.
+    Implementé nuevas programaciones que utilizábamos para cada cliente, logrando
+    la satisfacción de los mismos. Creamos apps de escritorio que ayudaban
+    a la automatización de procesos complejos`,
+  },
+];
+---
+
+<ol class="relative border-s border-gray-200 ml-3">
+  {
+    EXPERIENCES.map((experience, index) => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
