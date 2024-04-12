@@ -15,6 +15,7 @@ import SectionContainer from "../components/SectionContainer.astro";
 import CalendarTimeIcon from "../components/icons/CalendarTime.astro";
 import CodeIcon from "../components/icons/Code.astro";
 import UserIcon from "../components/icons/User.astro";
+import DownloadIcon from "../components/icons/Download.astro";
 ---
 
 <Layout
@@ -23,20 +24,21 @@ import UserIcon from "../components/icons/User.astro";
 >
   <main>
     <section
-      class="flex flex-col-reverse md:flex-row text-left pt-10 mx-auto md:max-w-5xl sm:max-w-full px-5 mb-10"
+      class="flex flex-col-reverse md:flex-row pt-10 mx-auto md:max-w-7xl sm:max-w-full px-5 mb-10"
     >
-      <div class="flex-grow my-auto md:w-1/2 mt-8">
-        <h2 class="mb-4 text-4xl font-semibold text-white text-left">
-          ¡Hola mundo! Soy Brian👋
+      <div class="flex-grow my-auto md:w-1/2 justify-center">
+        <h2 class="mb-4 text-4xl font-normal text-white text-left text-pretty">
+          <code>&lt;Hola mundo/&gt;</code>
+          Soy <span class="font-bold">Brian</span>👋
         </h2>
         <p class="font-light text-gray-300 sm:text-gray-300 text-left text-2xl">
-          Desarrollador fullstack con <span class="text-red-200"
+          Desarrollador fullstack con <span class="text-[#F2AB41]"
             >+5 años de experiencia</span
           > en la creación de aplicaciones web y móviles únicas. Desde República
           Dominicana 🇩🇴.
         </p>
 
-        <nav class="text-white flex gap-4 pt-2 flex-wrap">
+        <nav class="text-white flex gap-4 pt-2 flex-wrap mt-3">
           <SocialPill
             href="https://www.linkedin.com/in/briannys-mendez-polanco-60061018b/"
           >
@@ -53,24 +55,16 @@ import UserIcon from "../components/icons/User.astro";
           </SocialPill>
         </nav>
       </div>
-      <div class="w-full md:w-1/3">
+      <div class="w-full md:w-1/2">
         <div class="my-auto">
           <img
-            src="/avatar_brian3.png"
+            src="/brian_avatar.png"
             alt="Avatar de Brian"
             class="lg:w-full w-2/3 mx-auto rounded-full"
           />
         </div>
       </div>
     </section>
-
-    <SectionContainer id="experience">
-      <div class="flex items-center gap-x-3 pb-5">
-        <CalendarTimeIcon class="size-8 text-[#0ea5e9]" />
-        <h2 class="font-semibold text-[#0ea5e9] text-3xl">Experiencia</h2>
-      </div>
-      <Experience />
-    </SectionContainer>
 
     <SectionContainer id="projects">
       <div class="flex items-center gap-x-3 pb-5">
@@ -86,10 +80,45 @@ import UserIcon from "../components/icons/User.astro";
         <h2 class="font-semibold text-[#0ea5e9] text-3xl">Sobre mí</h2>
       </div>
       <AboutMe />
+      <nav class="text-white flex gap-4 pt-2 flex-wrap mt-3">
+        <SocialPill
+          href="https://www.linkedin.com/in/briannys-mendez-polanco-60061018b/"
+        >
+          <DownloadIcon class="md:size-6 size-4" />
+          Descargar CV
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+    <SectionContainer id="experience">
+      <div class="flex items-center gap-x-3 pb-5">
+        <CalendarTimeIcon class="size-8 text-[#0ea5e9]" />
+        <h2 class="font-semibold text-[#0ea5e9] text-3xl">Experiencia</h2>
+      </div>
+      <Experience />
     </SectionContainer>
 
     <SectionContainer id="contact">
-      <ContactForm client:visible />
+      <h2 class="text-[#0ea5e9] font-semibold text-3xl">
+        ¿Te ha gustado lo que has visto?
+      </h2>
+      <p class="text-gray-200 text-2xl mb-5">¡Pues trabajemos juntos! 🙂</p>
+
+      <nav class="text-white flex gap-4 pt-2 flex-wrap mt-3">
+        <SocialPill
+          href="https://www.linkedin.com/in/briannys-mendez-polanco-60061018b/"
+        >
+          <LinkedInIcon class="md:size-6 size-4" />
+          LikedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/brianpolanco25">
+          <GitHubIcon class="md:size-6 size-4" />
+          GitHub
+        </SocialPill>
+        <SocialPill href="mailto:brianmpolanco@gmail.com">
+          <MailIcon class="md:size-6 size-4" />
+          brianmpolanco@gmail.com
+        </SocialPill>
+      </nav>
     </SectionContainer>
 
     <!-- <MobileMenu /> -->

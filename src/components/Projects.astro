@@ -13,82 +13,88 @@ import FlutterIcon from "./icons/Flutter.astro";
 import DartIcon from "./icons/Dart.astro";
 
 const TAGS = {
-  
-    LARAVEL: {
-      name: "Laravel",
-      class: "bg-white",
-      icon: LaravelIcon,
-    },
-    
-    VUEJS: {
-      name: "Vuejs",
-      class: "bg-white",
-      icon: VuejsIcon,
-    },
+  LARAVEL: {
+    name: "Laravel",
+    class: "bg-white",
+    icon: LaravelIcon,
+  },
 
-    PHP: {
-      name: "PHP",
-      class: "bg-white",
-      icon: PhpIcon,
-    },
+  VUEJS: {
+    name: "Vuejs",
+    class: "bg-white",
+    icon: VuejsIcon,
+  },
 
-    MYSQL: {
-      name: "MySql",
-      class: "bg-white",
-      icon: MysqlIcon,
-    },
+  PHP: {
+    name: "PHP",
+    class: "bg-white",
+    icon: PhpIcon,
+  },
 
-    NODEJS: {
-      name: "NodeJs",
-      class: "bg-white",
-      icon: NodeJsIcon,
-    },
+  MYSQL: {
+    name: "MySql",
+    class: "bg-white",
+    icon: MysqlIcon,
+  },
 
-    NUXT: {
-      name: "Nuxt",
-      class: "bg-white",
-      icon: NuxtIcon,
-    },
+  NODEJS: {
+    name: "NodeJs",
+    class: "bg-white",
+    icon: NodeJsIcon,
+  },
 
-    DOCKER: {
-      name: "Docker",
-      class: "bg-white",
-      icon: DockerIcon,
-    },
+  NUXT: {
+    name: "Nuxt",
+    class: "bg-white",
+    icon: NuxtIcon,
+  },
 
-    MONGODB: {
-      name: "MongoDB",
-      class: "bg-white",
-      icon: MongoDbIcon,
-    },
+  DOCKER: {
+    name: "Docker",
+    class: "bg-white",
+    icon: DockerIcon,
+  },
 
-    REDIS: {
-      name: "Redis",
-      class: "bg-white",
-      icon: RedisIcon,
-    },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-white",
+    icon: MongoDbIcon,
+  },
 
-    FLUTTER: {
-      name: "Flutter",
-      class: "bg-white",
-      icon: FlutterIcon,
-    },
+  REDIS: {
+    name: "Redis",
+    class: "bg-white",
+    icon: RedisIcon,
+  },
 
-    DART: {
-      name: "Dart",
-      class: "bg-white",
-      icon: DartIcon,
-    },
-  };
+  FLUTTER: {
+    name: "Flutter",
+    class: "bg-white",
+    icon: FlutterIcon,
+  },
+
+  DART: {
+    name: "Dart",
+    class: "bg-white",
+    icon: DartIcon,
+  },
+};
 
 const PROJECTS = [
+  {
+    title: "WTracking Mobile",
+    description: `Aplicación móvil de Wtracking, permite la visualización de la ubicación de los vehículos en tiempo real. Tanto para Android como para iOS. `,
+    link: "#",
+    image: "/projects/wtracking_mobile.webp",
+    tags: [TAGS.FLUTTER, TAGS.DART],
+  },
   {
     title: "Aunclick",
     description: `Una app que permite el manejo contable de multiples empresas. Con la capacidad de generar reportes fiscales, estado en tiempo real
     de la situación financiera de la empresa, y la posibilidad de automatizar muchas tareas contables. `,
     link: "#",
     image: "/projects/aunclick_app2.webp",
-    tags: [TAGS.LARAVEL, TAGS.PHP,TAGS.VUEJS, TAGS.MYSQL],
+    tags: [TAGS.LARAVEL, TAGS.PHP, TAGS.VUEJS, TAGS.MYSQL],
   },
   {
     title: "WTracking",
@@ -97,38 +103,81 @@ const PROJECTS = [
     Utiliza una arquitectura de microservicios y diseño escalable para una gestión eficiente de flotas. `,
     link: "#",
     image: "/projects/wtracking.webp",
-    tags: [TAGS.NODEJS, TAGS.NUXT,TAGS.VUEJS, TAGS.MYSQL, TAGS.DOCKER, TAGS.MONGODB],
-  },
-
-  {
-    title: "WTracking Mobile",
-    description: `Aplicación móvil de Wtracking, permite la visualización de la ubicación de los vehículos en tiempo real. Tanto para Android como para iOS. `,
-    link: "#",
-    image: "/projects/wtracking_mobile.webp",
-    tags: [TAGS.FLUTTER, TAGS.DART],
+    tags: [
+      TAGS.NODEJS,
+      TAGS.NUXT,
+      TAGS.VUEJS,
+      TAGS.MYSQL,
+      TAGS.DOCKER,
+      TAGS.MONGODB,
+    ],
   },
 ];
 ---
 
 <section>
   {
-    PROJECTS.map(({ title, description, tags, image }) => (
-      <article class="mb-20">
-        <h3 class="text-2xl font-semibold text-blue-200 mb-2">{title}</h3>
-        <p class="text-lg mb-4 text-pretty text-gray-200">{description}</p>
-        <ul class="flex gap-x-2 flex-row mb-4">
-          {tags.map((tag) => (
-            <li>
-              <span class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
-                <tag.icon class="size-4" /> 
-                {tag.name}  
-              </span> 
-            </li>
-          ))}
-        </ul>
-        <img class="rounded shadow-2xl shadow-white/10" src={image} alt=`Captura de pantalla del proyecto ${image}` />
-      </article>
-    ))
+    PROJECTS.map(
+      ({ title, description, tags, image }, index) =>
+        index === 0 && ( // Añadimos esta condición para omitir el primer elemento
+          <article
+            class={`mb-5 px-5 py-5 rounded-2xl border border-gray-50 md:flex md:gap-5 md:items-center lg:items-center" }`}
+          >
+            <img
+              class="rounded-2xl shadow-2xl shadow-white/10 md:w-2/3"
+              src={image}
+              alt={`Captura de pantalla del proyecto ${title}`}
+            />
+            <div class="pt-5">
+              <h3 class="text-2xl font-semibold text-white mb-2">{title}</h3>
+              <p class="text-lg mb-4 text-pretty text-gray-200">
+                {description}
+              </p>
+              <ul class="flex flex-wrap  gap-x-2 gap-y-2 flex-row mb-4 text-pretty">
+                {tags.map((tag) => (
+                  <li>
+                    <span
+                      class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+                    >
+                      <tag.icon class="size-4" />
+                      {tag.name}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </article>
+        )
+    )
   }
- 
+
+  <div class="md:grid md:grid-cols-2 md:gap-4">
+    {
+      PROJECTS.slice(1).map(({ title, description, tags, image }) => (
+        <article class="md:mb-20 mb-5 px-5 py-5 rounded-2xl border border-gray-50">
+          <img
+            class="rounded-2xl shadow-2xl shadow-white/10 w-full"
+            src={image}
+            alt={`Captura de pantalla del proyecto ${title}`}
+          />
+          <div class="pt-5">
+            <h3 class="text-2xl font-semibold text-white mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty text-gray-200">{description}</p>
+            <ul class="flex flex-wrap gap-x-2 gap-y-2 flex-row mb-4 ">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </article>
+      ))
+    }
+  </div>
 </section>

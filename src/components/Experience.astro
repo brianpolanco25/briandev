@@ -41,3 +41,30 @@ const EXPERIENCES = [
     ))
   }
 </ol>
+<!-- <div class="relative wrap overflow-hidden p-10 h-full">
+  <div class="border-2-2 absolute border-white h-full border" style="left: 50%">
+  </div>
+  {
+    EXPERIENCES.map((experience, index) => (
+      <div
+        class={`mb-8 flex justify-between items-center w-full ${index % 2 !== 0 ? "flex-row-reverse" : ""}`}
+      >
+        <div class={`order-1 w-5/12 `} />
+        <div class="z-20 flex items-center order-1 bg-blue-400 shadow-xl w-8 h-8 rounded-full" />
+        <div
+          class={`order-1 ${index % 2 === 0 ? "bg-gray-400" : "bg-red-400"} rounded-lg shadow-xl w-5/12 px-6 py-4`}
+        >
+          <h3 class="mb-3 font-bold text-gray-800 text-xl">
+            {experience.date}
+          </h3>
+          <h3 class="mb-3 font-bold text-gray-800 text-xl">
+            {experience.title}
+          </h3>
+          <p class="text-sm leading-snug tracking-wide text-gray-900 text-opacity-100">
+            {experience.description}
+          </p>
+        </div>
+      </div>
+    ))
+  }
+</div> -->
